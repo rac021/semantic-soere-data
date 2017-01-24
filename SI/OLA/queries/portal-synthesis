@@ -50,6 +50,8 @@ CONSTRUCT {
      
     WHERE  {
         
+        hint:Query hint:analytic "true" .
+        
         ?obs_var_1 a oboe-core:Observation ; 
                      oboe-core:ofEntity ?undefinedVariable ; 
                      oboe-core:hasMeasurement ?measu_unitAndValue_02 ; 
