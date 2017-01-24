@@ -8,23 +8,23 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 CONSTRUCT { 
       
-       ?idVariableSynthesis	   a 	  		             :Variable       	   .
-       ?idVariableSynthesis	  :ofVariable 		       ?variable           .
+       ?idVariableSynthesis	   a 	  		       :Variable       	   .
+       ?idVariableSynthesis	  :ofVariable 		 ?variable           .
        ?idVariableSynthesis	  :hasCategory           ?category           .
        ?variable          	  :hasAnaeeVariableName  ?anaeeVariableName  .
-       ?variable              :hasLocalVariableName  ?localVariableName  .
-       ?variable              :hasUnit           	   ?unit               .
-       ?unit                  :hasAnaeeUnitName      ?anaeeUnitName      .
-       ?category              :hasCategoryName       ?categoryName       .
-       ?idVariableSynthesis   :hasSite               ?site               .
-       ?site		              :hasLocalSiteName      ?localSiteName      . 
-       ?site	                :hasAnaeeSiteName      ?anaeeSiteName      .           
-       ?site	                :hasSiteType           ?ecoType            .
-       ?site	                :hasSiteTypeName       ?ecoTypeName        .
-       ?site		              :hasInfra              ?infra              .
-       ?infra                 :hasInfraName          ?infraName          .
-       ?idVariableSynthesis   :hasNbData             ?nbData             .
-       ?idVariableSynthesis   :hasYear               ?year               .
+       ?variable                :hasLocalVariableName  ?localVariableName  .
+       ?variable                :hasUnit           	 ?unit               .
+       ?unit                    :hasAnaeeUnitName      ?anaeeUnitName      .
+       ?category                :hasCategoryName       ?categoryName       .
+       ?idVariableSynthesis     :hasSite               ?site               .
+       ?site		        :hasLocalSiteName      ?localSiteName      . 
+       ?site	              :hasAnaeeSiteName      ?anaeeSiteName      .           
+       ?site	              :hasSiteType           ?ecoType            .
+       ?site	              :hasSiteTypeName       ?ecoTypeName        .
+       ?site		        :hasInfra              ?infra              .
+       ?infra                   :hasInfraName          ?infraName          .
+       ?idVariableSynthesis     :hasNbData             ?nbData             .
+       ?idVariableSynthesis     :hasYear               ?year               .
 }
 
  WHERE {
