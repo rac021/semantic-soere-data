@@ -147,12 +147,12 @@ CONSTRUCT {
                   
         ?site rdfs:label ?anaeeSiteName .
      
-        BIND (URI( REPLACE ( CONCAT("http://anee-fr#ola/" , 
-                                     ?anaeeSiteName, "_" , 
-                                     ?categoryName, "_", 
-                                     ?anaeeVariableName, "_",
-                                     str(?year) ) , 
-                              " ", "_") ) AS ?idVariableSynthesis ) 
+        BIND (URI( REPLACE ( CONCAT("http://anee-fr#ola/"        , 
+                                     ?anaeeSiteName        , "_" , 
+                                     ?categoryName         , "_" , 
+                                     ?anaeeVariableName    , "_" ,
+                                     str(?year) )                , 
+                              " ", "_" ) ) AS ?idVariableSynthesis ) 
     } 
     
     GROUP BY ?infra         ?infraName ?idVariableSynthesis ?site     ?anaeeSiteName 
