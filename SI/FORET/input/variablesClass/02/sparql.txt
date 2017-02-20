@@ -1,4 +1,3 @@
-
 PREFIX : <http://www.anaee-france.fr/ontology/anaee-france_ontology#> 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 PREFIX oboe-core: <http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl#> 
@@ -50,14 +49,7 @@ CONSTRUCT {
    WHERE  {
        
            hint:Query hint:analytic "true" .
-           
-           
-          # hint:Query hint:optimizer "Runtime" .
-          # hint:Query hint:constructDistinctSPO "true" .
-          # hint:Query hint:normalizeFilterExpressions "true" .
-          # hint:Query hint:maxParallel 5 .
-          # hint:Query hint:pipelinedHashJoin "true" .        
-        
+             
            ?obs_var_1 a oboe-core:Observation ; 
                         oboe-core:ofEntity ?anyVariable ; 
                         oboe-core:hasMeasurement ?measu_2 ; 
@@ -170,4 +162,3 @@ CONSTRUCT {
            ?categoryName        ?variable            ?anaeeVariableName
            ?localVariableName   ?unit                ?anaeeUnitName     ?year
 }    
-

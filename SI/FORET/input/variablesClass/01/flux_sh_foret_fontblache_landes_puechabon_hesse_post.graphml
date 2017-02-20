@@ -981,19 +981,19 @@
               <y:Geometry height="185.76741931990568" width="1242.3943873099975" x="-3313.642132631334" y="-1633.4966990235134"/>
               <y:Fill color="#9985E3" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
-              <y:NodeLabel alignment="left" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="187.59375" modelName="custom" textColor="#000000" visible="true" width="1242.3943873099975" x="0.0" y="-0.9131653400470441">?META_VARIABLE ##META_PATTERN_CONTEXT :COLUMN_4  
+              <y:NodeLabel alignment="left" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="187.59375" modelName="custom" textColor="#000000" visible="true" width="1242.3943873099975" x="0.0" y="-0.9131653400470441">?META_VARIABLE ##META_PATTERN_CONTEXT COLUMN_4  
 { ?VAR_ENTITY_URI=COLUMN_4 } 
-{ ?UNIT_STANDARD_NAME_GRAPH = :COLUMN_9_10 } 
+{ ?UNIT_STANDARD_NAME_GRAPH = COLUMN_10 } 
 { ?DATATYPE_SQL='COLUMN_12' } 
 { ?VARIABLE_SQL='COLUMN_11'  }
-{ ?VARIABLE_STANDARD_NAME_GRAPH=:COLUMN_0 }
-{ ?VAR_CHARACTERISTIC_GRAPH=:COLUMN_5_6 } 
+{ ?VARIABLE_STANDARD_NAME_GRAPH=COLUMN_0 }
+{ ?VAR_CHARACTERISTIC_GRAPH=COLUMN_6 } 
 { ?VAR_CHARACTERISTIC_NAME_URI=COLUMN_6 } 
 { ?CHAR_QUALIFIER_NAME_URI=COLUMN_8 }
-{ ?QUALIFIER_NAME_GRAPH= :COLUMN_8 }
-{ ?PROTOCOL_NAME_GRAPH= :COLUMN_7 }
+{ ?QUALIFIER_NAME_GRAPH= COLUMN_8 }
+{ ?PROTOCOL_NAME_GRAPH= COLUMN_7 }
 &amp;&amp; ##META_PATTERN_PARALLEL 
-{ ?CATEGORY_STANDARD_NAME_URI=COLUMN_1} { ?CATEGORY_STANDARD_NAME_PATTERN=:COLUMN_1 } <y:LabelModel>
+{ ?CATEGORY_STANDARD_NAME_URI=COLUMN_1} { ?CATEGORY_STANDARD_NAME_PATTERN=COLUMN_1 } <y:LabelModel>
                   <y:SmartNodeLabelModel distance="4.0"/>
                 </y:LabelModel>
                 <y:ModelParameter>
@@ -1027,7 +1027,7 @@
               <y:Geometry height="30.0" width="1242.3943873099975" x="-3313.642132631334" y="-1741.1513036956512"/>
               <y:Fill color="#FFFF99" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
-              <y:NodeLabel alignment="left" autoSizePolicy="node_width" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="custom" textColor="#0000FF" visible="true" width="1242.3943873099975" x="0.0" y="6.015625">##META_PATTERN_CONTEXT 20 foret/observation/?ENTITY/{dty_id}/{mesure_id} oboe-core:hasContext [ oboe-core:Observation_:COLUMN_2 Q_200_201_202 ] <y:LabelModel>
+              <y:NodeLabel alignment="left" autoSizePolicy="node_width" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="custom" textColor="#0000FF" visible="true" width="1242.3943873099975" x="0.0" y="6.015625">##META_PATTERN_CONTEXT 20 foret/observation/?ENTITY/{dty_id}/{mesure_id} oboe-core:hasContext [ oboe-core:Observation_COLUMN_2 Q_200_201_202 ] <y:LabelModel>
                   <y:SmartNodeLabelModel distance="4.0"/>
                 </y:LabelModel>
                 <y:ModelParameter>
