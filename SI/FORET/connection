@@ -1,6 +1,0 @@
-
-obda-sourceUri     : dbForetMapping
-obda-connectionUrl : jdbc:postgresql://127.0.0.1/foret?sendBufferSize=5000
-obda-username      : foretuser_RAC
-obda-password      : foretuser_RAC
-obda-driverClass   : org.postgresql.Driver
