@@ -1,1 +1,0 @@
-# semantic-soere-data

@@ -1,0 +1,7 @@
+
+obda-sourceUri     : dbLacsMapping
+obda-connectionUrl : jdbc:postgresql://127.0.0.1/ola?sendBufferSize=5000
+
+obda-username      : ryahiaoui
+obda-password      : yahiaoui
+obda-driverClass   : org.postgresql.Driver
