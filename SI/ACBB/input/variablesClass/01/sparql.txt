@@ -191,3 +191,4 @@ WHERE {
              ?category      ?categoryName       ?variable             ?anaeeVariableName 
              ?year          ?localVariableName  ?unit                 ?anaeeUnitName     
  }
+
