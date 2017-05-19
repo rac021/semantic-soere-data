@@ -49,7 +49,6 @@ WHERE {
           ?anaeeUnitName
           ?year 
           (COUNT(*) as ?nbData)
-
     
     WHERE {
        
@@ -83,10 +82,10 @@ WHERE {
                       oboe-core:usesStandard :Anaee-franceVariableCategoryNamingStandard ; 
                       oboe-core:hasValue ?category .
                  
-            OPTIONAL {   ?category rdfs:label ?categoryName } .           
-              # ?category rdfs:label ?categoryName .           
-            BIND ( IF (BOUND (?categoryName), ?categoryName , "NULL_CATEGORY_LABEL_NAME"@en  ) AS ?categoryName ) .
-            FILTER (lang(?categoryName ) = "en") .
+           OPTIONAL {   ?category rdfs:label ?categoryName } .           
+         
+           BIND ( IF (BOUND (?categoryName), ?categoryName , "NULL_CATEGORY_LABEL_NAME"@en  ) AS ?categoryName ) .
+           FILTER (lang(?categoryName ) = "en") .
              
            ?measu_5 a oboe-core:Measurement ; 
                       oboe-core:usesStandard :NamingStandard ; 
@@ -146,7 +145,8 @@ WHERE {
 
             FILTER ( NOT EXISTS { ?obs_ecoType_70 oboe-core:ofEntity :ExperimentalNetwork  }) .
                                     
-            BIND (URI( REPLACE ( CONCAT("http://www.anaee-france.fr/ontology/anaee-france_ontology", ?ecoType ) , " ", "_") ) AS ?ecoTypeURI ) .
+            BIND ( URI ( REPLACE ( CONCAT("http://www.anaee-france.fr/ontology/anaee-france_ontology", ?ecoType ) , 
+                   " ", "_") ) AS ?ecoTypeURI ) .
                                     
             OPTIONAL {?ecoTypeURI rdfs:label ?ecoTypeName} . 
             BIND ( IF (BOUND (?ecoTypeName), ?ecoTypeName, "NULL_ecoTypeName"@en ) AS ?ecoTypeName) .                  
@@ -163,7 +163,9 @@ WHERE {
            
             BIND ( IF (BOUND (?site_x_treatment),  ?site_x_treatment  , ?anaeeSite ) AS  ?anaeeSiteOrTreatment ) .
       
-            BIND (URI( REPLACE ( CONCAT("http://www.anaee-france.fr/ontology/anaee-france_ontology", ?anaeeSiteOrTreatment ) , " ", "_") ) AS ?site ) .
+            BIND (URI( REPLACE ( CONCAT("http://www.anaee-france.fr/ontology/anaee-france_ontology", ?anaeeSiteOrTreatment )
+                       , " ", "_") ) AS ?site ) .
+                       
             OPTIONAL { ?site rdfs:label ?anaeeSiteName }  .
             FILTER (lang( ?anaeeSiteName ) = "en") .
                           
