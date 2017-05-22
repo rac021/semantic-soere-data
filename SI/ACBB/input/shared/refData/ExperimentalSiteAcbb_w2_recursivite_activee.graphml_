@@ -1777,7 +1777,7 @@ FROM public.agroecosysteme_agr agr<y:LabelModel>
           </y:Path>
           <y:LineStyle color="#999999" type="line" width="1.0"/>
           <y:Arrows source="none" target="delta"/>
-          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="10" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="15.640625" modelName="side_slider" preferredPlacement="center_on_edge" ratio="0.5439492477121024" textColor="#333333" visible="true" width="304.078125" x="-33.152331734892414" y="-50.96778131868848">hasContext   bloc_absolute_id &gt; parent_absolute_id }<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="center" side="on_edge" sideReference="relative_to_edge_flow"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="10" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="15.640625" modelName="side_slider" preferredPlacement="center_on_edge" ratio="0.5439492477121024" textColor="#333333" visible="true" width="307.7158203125" x="-33.152331734892414" y="-50.96778131868848">hasContext { bloc_absolute_id &gt; parent_absolute_id }<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="center" side="on_edge" sideReference="relative_to_edge_flow"/>
           </y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
