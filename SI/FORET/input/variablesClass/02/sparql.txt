@@ -157,8 +157,8 @@ CONSTRUCT {
                                " ", "_") ) AS ?idVariableSynthesis ) .          
   }
 
-  GROUP BY ?infra  ?infraName   ?idVariableSynthesis ?site              ?anaeeSiteName 
-           ?localSiteName       ?ecoType             ?ecoTypeName       ?category 
-           ?categoryName        ?variable            ?anaeeVariableName
-           ?localVariableName   ?unit                ?anaeeUnitName     ?year
+ GROUP BY ?infra  ?infraName   ?idVariableSynthesis ?site              ?anaeeSiteName 
+          ?localSiteName       ?ecoType             ?ecoTypeName       ?category 
+          ?categoryName        ?variable            ?anaeeVariableName ?localVariableName   
+          ?unit                ?anaeeUnitName       ?year
 }    
