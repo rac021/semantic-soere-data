@@ -12,7 +12,7 @@ CONSTRUCT {
       ?idVariableSynthesis   :hasCategory           ?category           .
       ?variable              :hasAnaeeVariableName  ?anaeeVariableName  .
       ?idVariableSynthesis   :hasLocalVariableName  ?localVariableName  .
-      ?variable              :hasUnit                ?unit              .
+      ?variable              :hasUnit               ?unit               .
       ?unit                  :hasAnaeeUnitName      ?anaeeUnitName      .
       ?category              :hasCategoryName       ?categoryName       .
       ?idVariableSynthesis   :hasSite               ?site               .
