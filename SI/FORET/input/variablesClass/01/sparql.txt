@@ -12,7 +12,7 @@ CONSTRUCT {
       ?idVariableSynthesis   :hasCategory           ?category           .
       ?variable              :hasAnaeeVariableName  ?anaeeVariableName  .
       ?idVariableSynthesis   :hasLocalVariableName  ?localVariableName  .
-      ?variable              :hasUnit               ?unit               .
+      ?variable              :hasUnit                ?unit              .
       ?unit                  :hasAnaeeUnitName      ?anaeeUnitName      .
       ?category              :hasCategoryName       ?categoryName       .
       ?idVariableSynthesis   :hasSite               ?site               .
@@ -67,9 +67,10 @@ CONSTRUCT {
            ?measu_2 a oboe-core:Measurement ; 
                       oboe-core:usesStandard ?unit .
       
-           OPTIONAL { ?unit rdfs:label ?anaeeUnitName . }
-           BIND ( IF (BOUND (?anaeeUnitName), ?anaeeUnitName, "NULL_UNIT_LABEL"@en  ) AS ?anaeeUnitName) .
-           FILTER (lang(?anaeeUnitName) = "en") .
+           OPTIONAL { ?unit rdfs:label ?anaeeUnitName . 
+           	FILTER (lang(?anaeeUnitName) = "en") .
+           	BIND ( IF (BOUND (?anaeeUnitName), ?anaeeUnitName, "NULL_UNIT_LABEL"@en  ) AS ?anaeeUnitName) .
+	   } .
              
            ?obs_variable_4 a oboe-core:Observation ; 
                              oboe-core:ofEntity :Variable ; 
@@ -85,12 +86,11 @@ CONSTRUCT {
                       oboe-core:usesStandard :Anaee-franceVariableCategoryNamingStandard ; 
                       oboe-core:hasValue ?category .
                  
-           # OPTIONAL {   ?category rdfs:label ?categoryName . }
-           
-           ?category rdfs:label ?categoryName .
+           OPTIONAL { ?category rdfs:label ?categoryName .
+                      FILTER (lang(?categoryName ) = "en") .
+                      BIND ( IF (BOUND (?categoryName), ?categoryName , "NULL_CATEGORY_LABEL_NAME"@en  ) AS ?categoryName ) .
+           } .
           
-           #  BIND ( IF (BOUND (?categoryName), ?categoryName , "NULL_CATEGRY_LABEL_NAME"@en  ) AS ?categoryName ) .
-           #  FILTER (lang(?categoryName ) = "en") .
              
            ?measu_5 a oboe-core:Measurement ; 
                       oboe-core:usesStandard :NamingStandard ; 
@@ -100,8 +100,12 @@ CONSTRUCT {
                       oboe-core:usesStandard :Anaee-franceVariableNamingStandard ; 
                       oboe-core:hasValue ?variable .
            
-           OPTIONAL { ?variable rdfs:label ?anaeeVariableName . }
-           BIND ( IF (BOUND (?anaeeVariableName), ?anaeeVariableName, "NULL_anaeeVariableName" ) AS ?anaeeVariableName) .
+           OPTIONAL { ?variable rdfs:label ?anaeeVariableName .
+                      BIND ( IF (BOUND (?anaeeVariableName), ?anaeeVariableName, "NULL_anaeeVariableName"@en ) 
+                      AS ?anaeeVariableName ) .
+                      # Label name not yet done in the Ontology. TO-DO ..
+                      # FILTER (lang(?anaeeVariableName ) = "en") .
+           } .
 
            ?obs_timeInstant_50 a oboe-core:Observation ; 
                                  oboe-core:ofEntity oboe-temporal:TimeInstant ; 
@@ -131,9 +135,10 @@ CONSTRUCT {
            BIND (URI( REPLACE ( CONCAT("http://www.anaee-france.fr/ontology/anaee-france_ontology" , 
                                 ?anaeeSiteNameStandard ) , " ", "_") ) AS ?site ) .
 
-           OPTIONAL { ?site rdfs:label ?anaeeSiteName }  .
-
-           BIND ( IF (BOUND (?anaeeSiteName),  ?anaeeSiteName, "NULL_LABEL_SITE" ) AS ?anaeeSiteName ) .
+            OPTIONAL { ?site rdfs:label ?anaeeSiteName .
+                       FILTER (lang( ?anaeeSiteName ) = "en") .
+                       BIND ( IF (BOUND (?anaeeSiteName), ?anaeeSiteName, "NULL_anaeeSiteName"@en ) AS ?anaeeSiteName) .                  
+	    } .
 
            ?obs_expNetwork_63  a oboe-core:Observation ;
                                  oboe-core:ofEntity :ExperimentalNetwork ; 
@@ -144,9 +149,11 @@ CONSTRUCT {
                        oboe-core:usesStandard :Anaee-franceExperimentalNetworkNamingStandard ;
                        oboe-core:hasValue ?infra .
 
-           OPTIONAL { ?infra rdfs:label ?infraName .}
-           BIND ( IF (BOUND (?infraName), ?infraName, "NULL_LABEL_INFRA"@en )  AS ?infraName ) .
-           FILTER (lang(?infraName ) = "en") .
+            OPTIONAL { ?infra rdfs:label ?infraName .
+                       FILTER (lang(?infraName ) = "en") .
+                       BIND ( IF (BOUND (?infraName), ?infraName, "NULL_LABEL_INFRA"@en )  AS ?infraName ) .
+            } .
+
 
            ?obs_ecoType_65 a oboe-core:Observation ; 
                              oboe-core:ofEntity ?ecoType . 
@@ -167,6 +174,6 @@ CONSTRUCT {
 
   GROUP BY ?infra  ?infraName   ?idVariableSynthesis ?site              ?anaeeSiteName 
            ?localSiteName       ?ecoType             ?ecoTypeName       ?category 
-           ?categoryName        ?variable            ?anaeeVariableName ?localVariableName   
-           ?unit                ?anaeeUnitName       ?year
+           ?categoryName        ?variable            ?anaeeVariableName
+           ?localVariableName   ?unit                ?anaeeUnitName     ?year
 }    
