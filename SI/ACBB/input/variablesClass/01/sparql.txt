@@ -1,6 +1,4 @@
 
-# 19 mai 2017 
-
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX : <http://www.anaee-france.fr/ontology/anaee-france_ontology#>  
@@ -14,7 +12,7 @@ CONSTRUCT {
       ?idVariableSynthesis   :ofVariable            ?variable           .
       ?idVariableSynthesis   :hasCategory           ?category           .
       ?variable              :hasAnaeeVariableName  ?anaeeVariableName  .
-      ?variable              :hasLocalVariableName  ?localVariableName  .
+      ?idVariableSynthesis   :hasLocalVariableName  ?localVariableName  .
       ?variable              :hasUnit                ?unit              .
       ?unit                  :hasAnaeeUnitName      ?anaeeUnitName      .
       ?category              :hasCategoryName       ?categoryName       .
@@ -64,8 +62,8 @@ WHERE {
                       oboe-core:usesStandard ?unit .
       
            OPTIONAL { ?unit rdfs:label ?anaeeUnitName .
-                      BIND ( IF (BOUND (?anaeeUnitName), ?anaeeUnitName, "NULL_UNIT_LABEL"@en  ) AS ?anaeeUnitName) .
                       FILTER (lang(?anaeeUnitName) = "en") .
+                      BIND ( IF (BOUND (?anaeeUnitName), ?anaeeUnitName, "NULL_UNIT_LABEL"@en  ) AS ?anaeeUnitName) .
            } .
                        
            ?obs_variable_4 a oboe-core:Observation ; 
@@ -83,8 +81,8 @@ WHERE {
                       oboe-core:hasValue ?category .
                  
            OPTIONAL { ?category rdfs:label ?categoryName .
-                      BIND ( IF (BOUND (?categoryName), ?categoryName , "NULL_CATEGORY_LABEL_NAME"@en  ) AS ?categoryName ) .
                       FILTER (lang(?categoryName ) = "en") .
+                      BIND ( IF (BOUND (?categoryName), ?categoryName , "NULL_CATEGORY_LABEL_NAME"@en  ) AS ?categoryName ) .
            } .           
                                 
            ?measu_5 a oboe-core:Measurement ; 
@@ -152,8 +150,8 @@ WHERE {
                    " ", "_") ) AS ?ecoTypeURI ) .
                                     
             OPTIONAL { ?ecoTypeURI rdfs:label ?ecoTypeName 
-                       BIND ( IF (BOUND (?ecoTypeName), ?ecoTypeName, "NULL_ecoTypeName"@en ) AS ?ecoTypeName) .                  
                        FILTER (lang(?ecoTypeName ) = "en" ) .
+                       BIND ( IF (BOUND (?ecoTypeName), ?ecoTypeName, "NULL_ecoTypeName"@en ) AS ?ecoTypeName) .                  
             } . 
             
             ?obs_expNetwork_71  a oboe-core:Observation ;
@@ -166,8 +164,8 @@ WHERE {
                         oboe-core:hasValue ?infra .
            
             OPTIONAL { ?infra rdfs:label ?infraName .
-                       BIND ( IF (BOUND (?infraName), ?infraName, "NULL_LABEL_INFRA"@en )  AS ?infraName ) .
                        FILTER (lang(?infraName ) = "en") .
+                       BIND ( IF (BOUND (?infraName), ?infraName, "NULL_LABEL_INFRA"@en )  AS ?infraName ) .
             } .
            
             
@@ -178,9 +176,11 @@ WHERE {
                        
             OPTIONAL { ?site rdfs:label ?anaeeSiteName .
                        FILTER (lang( ?anaeeSiteName ) = "en") .
-                       BIND ( IF (BOUND (?site_x_treatment),  ?anaeeSiteName  , ?localSiteNameTemp ) AS  ?localSiteName ) .
-            }  .
-            
+                       BIND ( IF (BOUND (?anaeeSiteName), ?anaeeSiteName, "NULL_anaeeSiteName"@en ) AS ?anaeeSiteName) .                  
+	    } .
+
+            BIND ( IF (BOUND (?site_x_treatment), ?anaeeSiteName  , ?localSiteNameTemp ) AS  ?localSiteName ) .
+         
       
             BIND ( URI( REPLACE ( CONCAT ( "http://anaee-fr#acbb/"      ,
                                            ?anaeeSiteName     , "_"     , 
@@ -194,6 +194,5 @@ WHERE {
   GROUP BY   ?infra         ?infraName          ?idVariableSynthesis  ?site              
              ?anaeeSiteName ?localSiteName      ?ecoType              ?ecoTypeName       
              ?category      ?categoryName       ?variable             ?anaeeVariableName 
-             ?year          ?localVariableName  ?unit                 ?anaeeUnitName     
+             ?year          ?localVariableName  ?unit                 ?anaeeUnitName 
  }
-
