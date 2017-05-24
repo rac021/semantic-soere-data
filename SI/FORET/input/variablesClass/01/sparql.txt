@@ -11,7 +11,7 @@ CONSTRUCT {
       ?idVariableSynthesis   :ofVariable            ?variable           .
       ?idVariableSynthesis   :hasCategory           ?category           .
       ?variable              :hasAnaeeVariableName  ?anaeeVariableName  .
-      ?variable              :hasLocalVariableName  ?localVariableName  .
+      ?idVariableSynthesis   :hasLocalVariableName  ?localVariableName  .
       ?variable              :hasUnit                ?unit              .
       ?unit                  :hasAnaeeUnitName      ?anaeeUnitName      .
       ?category              :hasCategoryName       ?categoryName       .
