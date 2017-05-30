@@ -13,8 +13,8 @@ biomass canopy heat storage flux density;surface flux, surface energy balance;ve
 air vegetation carbon dioxide storage flux density;surface flux, carbon cycle;vegetation cover, air;;carbon dioxyde storage;;mass flux density;;half-hourly average;;micromole per meter squared per second;Sc;flux sh
 air vegetation latent heat storage flux density;surface flux, surface energy balance;vegetation cover, air;;latent heat storage;;energy flux density;;half-hourly average;;watt per meter squared;Sw;flux sh
 air vegetation sensible heat storage flux density;surface flux, surface energy balance;vegetation cover, air;;sensible heat storage;;energy flux density;;half-hourly average;;watt per meter squared;Sa;flux sh
-net ecosystem carbon dioxyde flux density;surface flux, carbon cycle;ecosystem components;;carbon dioxyde;;energy flux density;;half-hourly average;;micromole per meter squared per second;NEE;flux sh
-net ecosystem carbon dioxyde flux density;surface flux, carbon cycle;ecosystem components;;carbon dioxyde;;energy flux density;gapfilled;half-hourly average;;micromole per meter squared per second;NEE_gf;flux sh
+net ecosystem carbon dioxyde flux density;surface flux, carbon cycle;ecosystem component;;carbon dioxyde;;energy flux density;;half-hourly average;;micromole per meter squared per second;NEE;flux sh
+net ecosystem carbon dioxyde flux density;surface flux, carbon cycle;ecosystem component;;carbon dioxyde;;energy flux density;gapfilled;half-hourly average;;micromole per meter squared per second;NEE_gf;flux sh
 reflected shortwave radiation  flux density;surface flux, surface energy balance;atmosphere, surface;;reflected shortwave radiation;;energy flux density;;half-hourly average;;watt per meter squared;Rr;meteo sh
 upward longwave radiation  flux density;surface flux, surface energy balance;atmosphere, surface;;upward longwave radiation;;energy flux density;;half-hourly average;;watt per meter squared;LWout;meteo sh
 net radiation  flux density;surface flux, surface energy balance;surface;;net radiation;;energy flux density;;half-hourly average;;watt per meter squared;Rn;meteo sh
