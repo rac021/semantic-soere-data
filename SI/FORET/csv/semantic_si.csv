@@ -6,7 +6,7 @@ net carbon dioxide  flux density above the ecosystem;surface flux, carbon cycle;
 net carbon dioxide  flux density above the ecosystem;surface flux, carbon cycle;top of ecosystem;;carbon dioxyde;;molar flux density;gapfilled;half-hourly average;;micromole per meter squared and per second;FCO2_gf;flux sh
 sensible heat energy flux density;surface flux, surface energy balance;top of ecosystem;;sensible heat;;energy flux density;;half-hourly average;;watt per meter squared;H;flux sh
 latent heat energy flux density;surface flux, surface energy balance;top of ecosystem;;latent heat;;energy flux density;;half-hourly average;;watt per meter squared;LE;flux sh
-air momentum flux density;surface flux, Atmospheric convection;atmosphere, air;;momentum;;momentum flux density;;half-hourly average;;kilogram per meter per second;T;flux sh
+air momentum flux density;surface flux, Atmospheric convection;atmosphere, air;;momentum;;momentum flux density;;half-hourly average;;kilogram per meter per second squared;T;flux sh
 wind friction velocity;meteorology, Atmospheric convection;atmosphere, air;;wind;;friction velocity;;half-hourly average;oboe-standards;meter per second;u*;flux sh
 stand transpiration flux;surface flux, water cycle;stand;;transpiration;;volumetric flux;;half-hourly cumulative;;milliliter per meter squared;TR;flux sh
 biomass canopy heat storage flux density;surface flux, surface energy balance;vegetation cover, biomass;;heat storage;;energy flux density;;half-hourly average;;watt per meter squared;Sb;flux sh
