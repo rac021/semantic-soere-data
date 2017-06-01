@@ -1,2 +1,0 @@
-CLASS   =  flux sh
-COLUMN  =  12
