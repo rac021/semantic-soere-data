@@ -5213,14 +5213,7 @@ As compared to the atomic OBOE approach, synthetic &apos;Variables&apos; are use
         <rdfs:label xml:lang="en">diffuse incident shortwave radiation</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.anaee-france.fr/ontology/anaee-france_ontology#Climate"/>
     </owl:Class>
- 
-
-    <!-- http://www.anaee-france.fr/ontology/anaee-france_ontology#DiffuseIncidentPhotosyntheticallyActiveRadiation -->
-
-    <owl:Class rdf:about="http://www.anaee-france.fr/ontology/anaee-france_ontology#DiffuseIncidentPhotosyntheticallyActiveRadiation">
-        <rdfs:label xml:lang="en">diffuse incident photosynthetically active radiation</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.anaee-france.fr/ontology/anaee-france_ontology#Climate"/>
-    </owl:Class>   
+    
 
 
     <!-- http://www.anaee-france.fr/ontology/anaee-france_ontology#Direction -->
@@ -17703,27 +17696,6 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
         <skos:exactMatch rdf:resource="http://www.anaee-france/thesaurus/c_3621b9ab"/>
     </owl:NamedIndividual>
     
-    <!-- http://www.anaee-france.fr/ontology/anaee-france_ontology#AirPressure -->
-
-    <owl:NamedIndividual rdf:about="http://www.anaee-france.fr/ontology/anaee-france_ontology#AirPressure">
-        <rdf:type rdf:resource="http://www.anaee-france.fr/ontology/anaee-france_ontology#Anaee-franceVariableNamingStandard"/>
-        <rdfs:label xml:lang="en">air pressure</rdfs:label>
-    </owl:NamedIndividual>
-
-    <!-- http://www.anaee-france.fr/ontology/anaee-france_ontology#WindDirection -->
-
-    <owl:NamedIndividual rdf:about="http://www.anaee-france.fr/ontology/anaee-france_ontology#WindDirection">
-        <rdf:type rdf:resource="http://www.anaee-france.fr/ontology/anaee-france_ontology#Anaee-franceVariableNamingStandard"/>
-        <rdfs:label xml:lang="en">wind direction</rdfs:label>
-    </owl:NamedIndividual>
-
-    <!-- http://www.anaee-france.fr/ontology/anaee-france_ontology#HorizontalWindSpeed -->
-
-    <owl:NamedIndividual rdf:about="http://www.anaee-france.fr/ontology/anaee-france_ontology#HorizontalWindSpeed">
-        <rdf:type rdf:resource="http://www.anaee-france.fr/ontology/anaee-france_ontology#Anaee-franceVariableNamingStandard"/>
-        <rdfs:label xml:lang="en">horizontal wind speed</rdfs:label>
-    </owl:NamedIndividual>
-
 
 
     <!-- http://www.anaee-france.fr/ontology/anaee-france_ontology#AirRelativeHumidityDurationAbove80Percent -->
@@ -21573,7 +21545,7 @@ date: 2003/01/10 10:53:23;  author: danbri;  state: Exp;
 basic geo vocab
 
 </rdfs:comment>
-        <dc:date>2016-11-05T08:15:30-05:00</dc:date>
+        <dc:date>$Date: 2009/04/20 15:00:30 $</dc:date>
         <dc:title>WGS84 Geo Positioning: an RDF vocabulary</dc:title>
     </rdf:Description>
     <rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.0/oboe-standards.owl#Ton">
