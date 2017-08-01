@@ -12,7 +12,7 @@ CONSTRUCT {
       ?idVariableSynthesis   :hasCategory           ?category           .
       ?variable              :hasAnaeeVariableName  ?anaeeVariableName  .
       ?idVariableSynthesis   :hasLocalVariableName  ?localVariableName  .
-      ?idVariableSynthesis   :hasUnit               ?unit               .
+      ?idVariableSynthesis   :hasUnit                ?unit              .
       ?unit                  :hasAnaeeUnitName      ?anaeeUnitName      .
       ?category              :hasCategoryName       ?categoryName       .
       ?idVariableSynthesis   :hasSite               ?site               .
@@ -47,19 +47,23 @@ CONSTRUCT {
           (COUNT(*) as ?nbData)
     
    WHERE  {
-   
+       
            hint:Query hint:analytic "true" .
-           # hint:Query hint:optimizer "Runtime" .
-           # hint:Query hint:constructDistinctSPO "true" .
-           # hint:Query hint:normalizeFilterExpressions "true" .
-           # hint:Query hint:maxParallel 5 .
-           # hint:Query hint:pipelinedHashJoin "true" .
-                
+           
+           
+          # hint:Query hint:optimizer "Runtime" .
+          # hint:Query hint:constructDistinctSPO "true" .
+          # hint:Query hint:normalizeFilterExpressions "true" .
+          # hint:Query hint:maxParallel 5 .
+          # hint:Query hint:pipelinedHashJoin "true" .
+        
+        
            ?obs_var_1 a oboe-core:Observation ; 
                         oboe-core:ofEntity ?anyVariable ; 
                         oboe-core:hasMeasurement ?measu_2 ; 
                         :hasVariableContext ?obs_variable_4 ;
-                        oboe-core:hasContext+ ?obs_timeInstant_50 , ?obs_site_60 .              
+                        oboe-core:hasContext ?obs_timeInstant_50 ;
+                        oboe-core:hasContext+ ?obs_site_60 .              
 
            ?measu_2 a oboe-core:Measurement ; 
                       oboe-core:usesStandard ?unit .
@@ -132,10 +136,10 @@ CONSTRUCT {
            BIND (URI( REPLACE ( CONCAT("http://www.anaee-france.fr/ontology/anaee-france_ontology" , 
                                 ?anaeeSiteNameStandard ) , " ", "_") ) AS ?site ) .
 
-           OPTIONAL { ?site rdfs:label ?anaeeSiteName .
-                      FILTER (lang( ?anaeeSiteName ) = "en") .
-                      BIND ( IF (BOUND (?anaeeSiteName), ?anaeeSiteName, "NULL_anaeeSiteName"@en ) AS ?anaeeSiteName) .                  
-	   } .
+            OPTIONAL { ?site rdfs:label ?anaeeSiteName .
+                       FILTER (lang( ?anaeeSiteName ) = "en") .
+                       BIND ( IF (BOUND (?anaeeSiteName), ?anaeeSiteName, "NULL_anaeeSiteName"@en ) AS ?anaeeSiteName) .                  
+	    } .
 
            ?obs_expNetwork_63  a oboe-core:Observation ;
                                  oboe-core:ofEntity :ExperimentalNetwork ; 
@@ -146,30 +150,31 @@ CONSTRUCT {
                        oboe-core:usesStandard :Anaee-franceExperimentalNetworkNamingStandard ;
                        oboe-core:hasValue ?infra .
 
-           OPTIONAL { ?infra rdfs:label ?infraName .
-                      FILTER (lang(?infraName ) = "en") .
-                      BIND ( IF (BOUND (?infraName), ?infraName, "NULL_LABEL_INFRA"@en )  AS ?infraName ) .
-           } .
+            OPTIONAL { ?infra rdfs:label ?infraName .
+                       FILTER (lang(?infraName ) = "en") .
+                       BIND ( IF (BOUND (?infraName), ?infraName, "NULL_LABEL_INFRA"@en )  AS ?infraName ) .
+            } .
+
 
            ?obs_ecoType_65 a oboe-core:Observation ; 
                              oboe-core:ofEntity ?ecoType . 
 
-           ?ecoType rdfs:label ?ecoTypeName ; FILTER (lang(?ecoTypeName ) = "en" ) .
+          ?ecoType rdfs:label ?ecoTypeName ; FILTER (lang(?ecoTypeName ) = "en" ) .
 
-           FILTER ( NOT EXISTS { ?obs_ecoType_65 oboe-core:ofEntity :ExperimentalNetwork  }) .
+          FILTER ( NOT EXISTS { ?obs_ecoType_65 oboe-core:ofEntity :ExperimentalNetwork  }) .
 
-           BIND(YEAR(?date) AS ?year) .   
+          BIND(YEAR(?date) AS ?year) .   
      
-           BIND (URI( REPLACE ( CONCAT ("http://anaee-fr#foret/"  ,
-                                        ?anaeeSiteName     , "_"  , 
-                                        ?categoryName      , "_"  , 
-                                        ?anaeeVariableName , "_"  ,
-                                        str(?year) )              , 
-                                " ", "_") ) AS ?idVariableSynthesis ) .          
+          BIND (URI( REPLACE ( CONCAT ("http://anaee-fr#foret/"  ,
+                                       ?anaeeSiteName     , "_"  , 
+                                       ?categoryName      , "_"  , 
+                                       ?anaeeVariableName , "_"  ,
+                                       str(?year) )              , 
+                               " ", "_") ) AS ?idVariableSynthesis ) .          
   }
 
   GROUP BY ?infra  ?infraName   ?idVariableSynthesis ?site              ?anaeeSiteName 
            ?localSiteName       ?ecoType             ?ecoTypeName       ?category 
-           ?categoryName        ?variable            ?anaeeVariableName ?localVariableName   
-           ?unit                ?anaeeUnitName       ?year
+           ?categoryName        ?variable            ?anaeeVariableName
+           ?localVariableName   ?unit                ?anaeeUnitName     ?year
 }    

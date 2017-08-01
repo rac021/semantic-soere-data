@@ -287,7 +287,7 @@
               <y:Geometry height="170.93222665469204" width="781.2984524672481" x="598.3231615780621" y="-1054.2584674128311"/>
               <y:Fill color="#99CCFF" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
-              <y:NodeLabel alignment="left" autoSizePolicy="node_width" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="157.65625" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="781.2984524672481" x="0.0" y="6.6379883273459654">Query_(62): SELECT zet.id AS site_id,  
+              <y:NodeLabel alignment="left" autoSizePolicy="node_width" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="171.625" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="781.2984524672481" x="0.0" y="-0.34638667265403456">Query_(62): SELECT zet.id AS site_id,  
 CASE zet.code
 WHEN 'hesse' THEN '#Hesse' 
 WHEN 'guyaflux' THEN '#Guyaflux' 
@@ -296,6 +296,7 @@ WHEN 'puechabon' THEN '#Puechabon'
 WHEN 'font-blanche' THEN '#Font-Blanche'
 WHEN 'rubberflux' THEN '#Rubberflux'
 WHEN 'landes' THEN '#Landes'
+WHEN 'montiers_sur_saulx' THEN '#MontiersSurSaulx'
 ELSE '#unknown_uri'  END  AS uri    
 FROM public.zones_etude_zet zet WHERE parent_id IS NULL<y:LabelModel>
                   <y:SmartNodeLabelModel distance="4.0"/>
